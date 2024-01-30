@@ -25,6 +25,4 @@ enum TipPercentage: Double {
             return "N/A"
         }
     }
-    
-    
 }
