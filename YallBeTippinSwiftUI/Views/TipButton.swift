@@ -25,8 +25,6 @@ struct TipButton: View {
             }
         }
     }
-    
-    
 }
 
 #Preview {

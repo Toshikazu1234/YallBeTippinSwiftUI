@@ -44,12 +44,11 @@ struct MenuItemView: View {
                     .font(.title2)
                 
                 Button {
-                    if item.orderCount > 0 {
-                        if !showFullMenu && item.orderCount == 1 {
-                            presentAlert = true
-                        } else {
-                            item.orderCount -= 1
-                        }
+                    guard item.orderCount > 0 else { return }
+                    if !showFullMenu && item.orderCount == 1 {
+                        presentAlert = true
+                    } else {
+                        item.orderCount -= 1
                     }
                 } label: {
                     ZStack {

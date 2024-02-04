@@ -49,7 +49,6 @@ struct MenuListView: View {
                 } label: {
                     Text("Submit")
                 }
-
             }
         }
     }

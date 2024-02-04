@@ -31,6 +31,7 @@ import Observation
     var tipPercentage: TipPercentage = .small
     
     var total: Double = 0
+    
     var canViewCart = false
     
     var receipt: [any ReceiptItem] = []
