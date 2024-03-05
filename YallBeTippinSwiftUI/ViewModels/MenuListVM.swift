@@ -20,15 +20,15 @@ import Observation
         MenuItem(name: "Sushi", price: 8, img: "sushi")
     ] {
         didSet {
-            var sum: Double = 0
-            for i in items {
-                sum += i.price * Double(i.orderCount)
-            }
-            total = sum
+            let sum = items.reduce(0, {
+                $0 + ($1.price * Double($1.orderCount))
+            })
+            total = sum * tipPercentage.rawValue
+            print("total: \(total)")
         }
     }
     
-    var tipPercentage: TipPercentage = .small
+    var tipPercentage: TipPercentage = .none
     
     var total: Double = 0
     
@@ -40,12 +40,15 @@ import Observation
         for i in items where i.orderCount > 0 {
             receipt.append(i)
         }
-        receipt.append(FinalReceiptItem(
+        let tip = FinalReceiptItem(
             title: "Tip",
-            value: tipPercentage.toString()))
-        receipt.append(FinalReceiptItem(
+            value: tipPercentage.toString())
+        receipt.append(tip)
+        
+        let total = FinalReceiptItem(
             title: "Total",
-            value: total.toCurrency()))
+            value: total.toCurrency())
+        receipt.append(total)
     }
     
     func reset() {
