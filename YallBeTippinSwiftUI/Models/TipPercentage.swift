@@ -22,7 +22,7 @@ enum TipPercentage: Double {
         case .large:
             return "22%"
         case .none:
-            return "N/A"
+            return "Skip"
         }
     }
 }
