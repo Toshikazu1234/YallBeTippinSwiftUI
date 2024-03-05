@@ -12,13 +12,31 @@ struct TipView: View {
     
     var body: some View {
         VStack(alignment: .center, spacing: 10) {
-            TipButton(tip: .small)
+            VStack(alignment: .center, spacing: 10) {
+                TipButton(tip: .small)
+                
+                TipButton(tip: .medium)
+                
+                TipButton(tip: .large)
+            }
+            .padding(.horizontal)
             
-            TipButton(tip: .medium)
-            
-            TipButton(tip: .large)
+            Button {
+                vm.tipPercentage = .none
+            } label: {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(vm.tipPercentage == .none ? Color.blue : Color.gray)
+                    
+                    Text(vm.tipPercentage.toString())
+                        .font(.largeTitle)
+                        .foregroundStyle(.white)
+                }
+            }
+            .padding(.horizontal)
+            .frame(maxHeight: 60)
         }
-        .padding(.horizontal)
+        
         .navigationTitle("Just gonna ask a question")
         .toolbar {
             NavigationLink(destination: ReceiptView()) {
