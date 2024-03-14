@@ -40,6 +40,9 @@ struct MenuItemView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 20))
         }
         .frame(maxHeight: 100)
+        .onTapGesture {
+            item.orderCount += 1
+        }
         .alert(isPresented: $presentAlert) {
             Alert(title: Text("Alert"), message: Text("Are you sure you want to remove this item?"), primaryButton: .destructive(Text("Remove"), action: {
                 item.orderCount = 0
