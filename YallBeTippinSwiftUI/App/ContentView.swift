@@ -11,7 +11,7 @@ struct ContentView: View {
     @State private var vm = MenuListVM()
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $vm.path) {
             MenuListView(showFullMenu: true)
                 .navigationBarTitleDisplayMode(.inline)
         }

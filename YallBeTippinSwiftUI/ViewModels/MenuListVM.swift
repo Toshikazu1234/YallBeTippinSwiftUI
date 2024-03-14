@@ -9,6 +9,8 @@ import Foundation
 import Observation
 
 @Observable final class MenuListVM {
+    var path: [Int] = []
+    
     var items: [MenuItem] = [
         MenuItem(name: "Burger", price: 12.5, img: "burger"),
         MenuItem(name: "Chow mein", price: 13, img: "chowMein"),
@@ -31,8 +33,6 @@ import Observation
     var tipPercentage: TipPercentage = .none
     
     var total: Double = 0
-    
-    var canViewCart = false
     
     var receipt: [any ReceiptItem] = []
     

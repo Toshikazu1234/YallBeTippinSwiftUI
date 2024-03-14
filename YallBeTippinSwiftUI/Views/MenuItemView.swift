@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MenuItemView: View {    
+    @Environment(MenuListVM.self) private var vm
     @Binding var item: MenuItem
     let showFullMenu: Bool
     @State private var presentAlert: Bool = false
@@ -46,6 +47,11 @@ struct MenuItemView: View {
         .alert(isPresented: $presentAlert) {
             Alert(title: Text("Alert"), message: Text("Are you sure you want to remove this item?"), primaryButton: .destructive(Text("Remove"), action: {
                 item.orderCount = 0
+                if !vm.items.contains(where: {
+                    $0.orderCount > 0
+                }) && !showFullMenu {
+                    vm.path.removeLast()
+                }
             }), secondaryButton: .cancel())
         }
     }

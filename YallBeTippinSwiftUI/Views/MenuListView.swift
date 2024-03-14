@@ -20,14 +20,15 @@ struct MenuListView: View {
                 MenuItemView(item: $item, showFullMenu: showFullMenu)
             }
             .navigationTitle("Menu")
-            .navigationDestination(isPresented: $vm.canViewCart) {
+            .navigationDestination(for: Int.self) { _ in
                 MenuListView(showFullMenu: false)
             }
             .toolbar {
                 Button {
-                    vm.canViewCart = vm.total > 0
-                    if !vm.canViewCart {
+                    if vm.total == 0 {
                         showAlert = true
+                    } else {
+                        vm.path.append(1)
                     }
                 } label: {
                     Image(systemName: "cart")
