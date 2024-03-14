@@ -18,6 +18,9 @@ struct MenuListView: View {
         if showFullMenu {
             List($vm.items) { $item in
                 MenuItemView(item: $item, showFullMenu: showFullMenu)
+                    .onTapGesture {
+                        item.orderCount += 1
+                    }
             }
             .navigationTitle("Menu")
             .navigationDestination(isPresented: $vm.canViewCart) {
