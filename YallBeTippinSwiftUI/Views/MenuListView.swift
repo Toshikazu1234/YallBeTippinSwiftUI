@@ -43,6 +43,9 @@ struct MenuListView: View {
             List($vm.items, editActions: .delete) { $item in
                 if item.orderCount > 0 {
                     MenuItemView(item: $item, showFullMenu: showFullMenu)
+                        .onTapGesture {
+                            item.orderCount += 1
+                        }
                 }
             }
             .navigationTitle("Cart")
