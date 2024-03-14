@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50498AF52BA3AA5C00998F43 /* MenuButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50498AF42BA3AA5B00998F43 /* MenuButtonsView.swift */; };
 		508B7BE52B66D6AC00E11FB8 /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B7BE42B66D6AC00E11FB8 /* MenuListView.swift */; };
 		508B7BE72B66D7AF00E11FB8 /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B7BE62B66D7AF00E11FB8 /* MenuItemView.swift */; };
 		508B7BE92B66E03D00E11FB8 /* MenuListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B7BE82B66E03D00E11FB8 /* MenuListVM.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50498AF42BA3AA5B00998F43 /* MenuButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonsView.swift; sourceTree = "<group>"; };
 		508B7BE42B66D6AC00E11FB8 /* MenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
 		508B7BE62B66D7AF00E11FB8 /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
 		508B7BE82B66E03D00E11FB8 /* MenuListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListVM.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			children = (
 				508B7BE42B66D6AC00E11FB8 /* MenuListView.swift */,
 				508B7BE62B66D7AF00E11FB8 /* MenuItemView.swift */,
+				50498AF42BA3AA5B00998F43 /* MenuButtonsView.swift */,
 				508B7BF42B66FE8400E11FB8 /* TipView.swift */,
 				5092FA372B6753900041FC2B /* TipButton.swift */,
 				5092FA2D2B6718950041FC2B /* ReceiptView.swift */,
@@ -208,6 +211,7 @@
 				508B7BE72B66D7AF00E11FB8 /* MenuItemView.swift in Sources */,
 				508B7BF72B6716D200E11FB8 /* TipPercentage.swift in Sources */,
 				508B7BE92B66E03D00E11FB8 /* MenuListVM.swift in Sources */,
+				50498AF52BA3AA5C00998F43 /* MenuButtonsView.swift in Sources */,
 				5092FA382B6753900041FC2B /* TipButton.swift in Sources */,
 				508B7BE52B66D6AC00E11FB8 /* MenuListView.swift in Sources */,
 				508B7BEC2B66E0B400E11FB8 /* MenuItem.swift in Sources */,

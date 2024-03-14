@@ -25,42 +25,12 @@ struct MenuItemView: View {
             
             Spacer()
             
-            VStack(alignment: .center, spacing: 5) {
-                Button {
-                    item.orderCount += 1
-                } label: {
-                    ZStack {
-                        Circle()
-                            .fill(Color.blue)
-                        
-                        Image(systemName: "plus")
-                            .symbolRenderingMode(.monochrome)
-                            .foregroundStyle(.white)
-                    }
+            if showFullMenu {
+                if item.orderCount > 0 {
+                    MenuButtonsView(item: $item, showFullMenu: showFullMenu, presentAlert: $presentAlert)
                 }
-                .buttonStyle(.borderless)
-                
-                Text("\(item.orderCount)")
-                    .font(.title2)
-                
-                Button {
-                    guard item.orderCount > 0 else { return }
-                    if !showFullMenu && item.orderCount == 1 {
-                        presentAlert = true
-                    } else {
-                        item.orderCount -= 1
-                    }
-                } label: {
-                    ZStack {
-                        Circle()
-                            .fill(Color.blue)
-                        
-                        Image(systemName: "minus")
-                            .symbolRenderingMode(.monochrome)
-                            .foregroundStyle(.white)
-                    }
-                }
-                .buttonStyle(.borderless)
+            } else {
+                MenuButtonsView(item: $item, showFullMenu: showFullMenu, presentAlert: $presentAlert)
             }
             
             Image(item.img)
