@@ -27,7 +27,7 @@ struct TipButton: View {
     }
 }
 
-#Preview {
+#Preview(traits: .sizeThatFitsLayout) {
     TipButton(tip: .small)
 }
 

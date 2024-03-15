@@ -57,7 +57,7 @@ struct MenuItemView: View {
     }
 }
 
-#Preview {
+#Preview(traits: .sizeThatFitsLayout) {
     MenuItemView(item: .constant(MenuItem(name: "Pizza", price: 6, img: "pizza", orderCount: 0)), showFullMenu: false)
         .previewLayout(.sizeThatFits)
 }

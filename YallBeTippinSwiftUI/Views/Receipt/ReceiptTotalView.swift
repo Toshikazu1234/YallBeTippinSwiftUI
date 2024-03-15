@@ -24,6 +24,6 @@ struct ReceiptTotalView: View {
     }
 }
 
-#Preview {
+#Preview(traits: .sizeThatFitsLayout) {
     ReceiptTotalView(item: FinalReceiptItem(title: "Tip", value: "18%"))
 }

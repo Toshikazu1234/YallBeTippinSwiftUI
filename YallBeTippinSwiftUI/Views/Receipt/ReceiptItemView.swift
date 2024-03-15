@@ -26,6 +26,6 @@ struct ReceiptItemView: View {
     }
 }
 
-#Preview {
+#Preview(traits: .sizeThatFitsLayout) {
     ReceiptItemView(item: MenuItem(name: "Pizza", price: 6, img: "pizza", orderCount: 1))
 }
