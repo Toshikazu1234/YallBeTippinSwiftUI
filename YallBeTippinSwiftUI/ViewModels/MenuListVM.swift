@@ -30,7 +30,11 @@ import Observation
         }
     }
     
-    var tipPercentage: TipPercentage = .none
+    var tipPercentage: TipPercentage = .none {
+        didSet {
+            total *= tipPercentage.rawValue
+        }
+    }
     
     var total: Double = 0
     
