@@ -28,7 +28,7 @@ struct TipView: View {
                     RoundedRectangle(cornerRadius: 20)
                         .fill(vm.tipPercentage == .none ? Color.blue : Color.gray)
                     
-                    Text(vm.tipPercentage.toString())
+                    Text("Skip")
                         .font(.largeTitle)
                         .foregroundStyle(.white)
                 }
