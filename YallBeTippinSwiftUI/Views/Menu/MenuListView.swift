@@ -15,42 +15,40 @@ struct MenuListView: View {
     
     var body: some View {
         @Bindable var vm = vm
-        if showFullMenu {
-            List($vm.items) { $item in
+        List($vm.items) { $item in
+            if showFullMenu {
+                MenuItemView(item: $item, showFullMenu: showFullMenu)
+            } else if item.orderCount > 0 {
                 MenuItemView(item: $item, showFullMenu: showFullMenu)
             }
-            .navigationTitle("Menu")
-            .navigationDestination(for: Int.self) { _ in
+        }
+        .navigationTitle(showFullMenu ? "Menu" : "Cart")
+        .navigationDestination(for: MenuListVM.Screen.self) { screen in
+            if screen == .cart {
                 MenuListView(showFullMenu: false)
+            } else if screen == .tip {
+                TipView()
             }
-            .toolbar {
+        }
+        .toolbar {
+            if showFullMenu {
                 Button {
                     if vm.total == 0 {
                         showAlert = true
                     } else {
-                        vm.path.append(1)
+                        vm.path.append(.cart)
                     }
                 } label: {
                     Image(systemName: "cart")
                 }
-            }
-            .alert("Your cart is empty!", isPresented: $showAlert) {
-                Button("Dismiss") {}
-            }
-        } else {
-            List($vm.items, editActions: .delete) { $item in
-                if item.orderCount > 0 {
-                    MenuItemView(item: $item, showFullMenu: showFullMenu)
+            } else {
+                Button("Submit") {
+                    vm.path.append(.tip)
                 }
             }
-            .navigationTitle("Cart")
-            .toolbar {
-                NavigationLink {
-                    TipView()
-                } label: {
-                    Text("Submit")
-                }
-            }
+        }
+        .alert("Your cart is empty!", isPresented: $showAlert) {
+            Button("Dismiss") {}
         }
     }
 }
