@@ -32,24 +32,13 @@ struct MenuListView: View {
         }
         .toolbar {
             if showFullMenu {
-                Button {
-                    if vm.total == 0 {
-                        showAlert = true
-                    } else {
-                        vm.path.append(.cart)
-                    }
-                } label: {
-                    Image(systemName: "cart")
-                }
+                CartButton(showAlert: $showAlert)
             } else {
                 Button("Submit") {
                     vm.path.append(.tip)
                 }
             }
-        }
-        .alert("Your cart is empty!", isPresented: $showAlert) {
-            Button("Dismiss") {}
-        }
+        }        
     }
 }
 
