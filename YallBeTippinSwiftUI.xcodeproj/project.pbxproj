@@ -18,7 +18,7 @@
 		5091819C2BA63CA400B50314 /* CartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5091819B2BA63CA400B50314 /* CartButton.swift */; };
 		5092FA2E2B6718950041FC2B /* ReceiptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092FA2D2B6718950041FC2B /* ReceiptView.swift */; };
 		5092FA302B6723170041FC2B /* ReceiptItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092FA2F2B6723170041FC2B /* ReceiptItemView.swift */; };
-		5092FA342B672A2C0041FC2B /* ReceiptItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092FA332B672A2C0041FC2B /* ReceiptItem.swift */; };
+		5092FA342B672A2C0041FC2B /* FinalReceiptItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092FA332B672A2C0041FC2B /* FinalReceiptItem.swift */; };
 		5092FA362B672AB00041FC2B /* ReceiptTotalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092FA352B672AB00041FC2B /* ReceiptTotalView.swift */; };
 		5092FA382B6753900041FC2B /* TipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092FA372B6753900041FC2B /* TipButton.swift */; };
 		50C97F5C2B64CC0A009CBDD0 /* YallBeTippinSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C97F5B2B64CC0A009CBDD0 /* YallBeTippinSwiftUIApp.swift */; };
@@ -39,7 +39,7 @@
 		5091819B2BA63CA400B50314 /* CartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartButton.swift; sourceTree = "<group>"; };
 		5092FA2D2B6718950041FC2B /* ReceiptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptView.swift; sourceTree = "<group>"; };
 		5092FA2F2B6723170041FC2B /* ReceiptItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptItemView.swift; sourceTree = "<group>"; };
-		5092FA332B672A2C0041FC2B /* ReceiptItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptItem.swift; sourceTree = "<group>"; };
+		5092FA332B672A2C0041FC2B /* FinalReceiptItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalReceiptItem.swift; sourceTree = "<group>"; };
 		5092FA352B672AB00041FC2B /* ReceiptTotalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptTotalView.swift; sourceTree = "<group>"; };
 		5092FA372B6753900041FC2B /* TipButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipButton.swift; sourceTree = "<group>"; };
 		50C97F582B64CC0A009CBDD0 /* YallBeTippinSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YallBeTippinSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +95,7 @@
 			children = (
 				508B7BEB2B66E0B400E11FB8 /* MenuItem.swift */,
 				508B7BF62B6716D200E11FB8 /* TipPercentage.swift */,
-				5092FA332B672A2C0041FC2B /* ReceiptItem.swift */,
+				5092FA332B672A2C0041FC2B /* FinalReceiptItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -245,7 +245,7 @@
 				508B7BEC2B66E0B400E11FB8 /* MenuItem.swift in Sources */,
 				50C97F5E2B64CC0A009CBDD0 /* ContentView.swift in Sources */,
 				50C97F5C2B64CC0A009CBDD0 /* YallBeTippinSwiftUIApp.swift in Sources */,
-				5092FA342B672A2C0041FC2B /* ReceiptItem.swift in Sources */,
+				5092FA342B672A2C0041FC2B /* FinalReceiptItem.swift in Sources */,
 				5092FA2E2B6718950041FC2B /* ReceiptView.swift in Sources */,
 				5092FA302B6723170041FC2B /* ReceiptItemView.swift in Sources */,
 				508B7BF12B66E9E200E11FB8 /* Extensions.swift in Sources */,

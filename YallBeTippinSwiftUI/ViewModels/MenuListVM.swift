@@ -40,22 +40,21 @@ import Observation
     }
     
     var total: Double = 0
-    
-    var receipt: [any ReceiptItem] = []
+        
+    var receipt: [MenuItem] = []
+    var receiptTip: FinalReceiptItem?
+    var receiptTotal: FinalReceiptItem?
     
     func calculate() {
         for i in items where i.orderCount > 0 {
             receipt.append(i)
         }
-        let tip = FinalReceiptItem(
+        receiptTip = FinalReceiptItem(
             title: "Tip",
             value: tipPercentage.toString())
-        receipt.append(tip)
-        
-        let total = FinalReceiptItem(
+        receiptTotal = FinalReceiptItem(
             title: "Total",
             value: total.toCurrency())
-        receipt.append(total)
     }
     
     func reset() {

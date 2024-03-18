@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MenuItem: ReceiptItem {
+struct MenuItem: Identifiable {
     let id = UUID().uuidString
     let name: String
     let price: Double

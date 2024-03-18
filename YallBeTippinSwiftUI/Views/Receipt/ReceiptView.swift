@@ -15,11 +15,15 @@ struct ReceiptView: View {
             Text("Thank you!")
                 .font(.largeTitle)
             
-            List(vm.receipt, id: \.anyHashableId) { item in
-                if let item = item as? MenuItem {
-                    ReceiptItemView(item: item)
-                } else if let item = item as? FinalReceiptItem {
-                    ReceiptTotalView(item: item)
+            List {
+                ForEach(vm.receipt, id: \.id) {
+                    ReceiptItemView(item: $0)
+                }
+                if let tip = vm.receiptTip {
+                    ReceiptTotalView(item: tip)
+                }
+                if let total = vm.receiptTotal {
+                    ReceiptTotalView(item: total)
                 }
             }
             .listStyle(.plain)
