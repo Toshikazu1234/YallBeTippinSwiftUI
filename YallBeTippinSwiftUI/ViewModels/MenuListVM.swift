@@ -35,15 +35,19 @@ import Observation
     
     var tipPercentage: TipPercentage = .none {
         didSet {
-            total *= tipPercentage.rawValue
+            total = tempTotal * tipPercentage.rawValue
         }
     }
-    
+    var tempTotal: Double = 0
     var total: Double = 0
         
     var receipt: [MenuItem] = []
     var receiptTip: FinalReceiptItem?
     var receiptTotal: FinalReceiptItem?
+    
+    func saveTempTotal() {
+        tempTotal = total
+    }
     
     func calculate() {
         for i in items where i.orderCount > 0 {

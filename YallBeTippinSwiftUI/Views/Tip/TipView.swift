@@ -36,7 +36,9 @@ struct TipView: View {
             .padding(.horizontal)
             .frame(maxHeight: 60)
         }
-        
+        .onAppear {
+            vm.saveTempTotal()
+        }
         .navigationTitle("Just gonna ask a question")
         .toolbar {
             NavigationLink(destination: ReceiptView()) {
